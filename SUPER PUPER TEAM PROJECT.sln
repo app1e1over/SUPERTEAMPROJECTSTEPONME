@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32929.386
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "Database\Database.sqlproj", "{0EB995D8-532A-4040-BEB8-0845C95DC949}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library", "Library\Library.csproj", "{7F95C31F-DAB1-4D5E-B513-FD045C3CC254}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin Panel", "Admin Panel\Admin Panel.csproj", "{D4AC4AD5-7083-4D02-84BB-F34E6975739A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Admin Panel", "Admin Panel\Admin Panel.csproj", "{D4AC4AD5-7083-4D02-84BB-F34E6975739A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Operator", "Operator\Operator.csproj", "{53E1241C-E2CC-4E1E-A332-AEC6636FEC7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{D4AC4AD5-7083-4D02-84BB-F34E6975739A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4AC4AD5-7083-4D02-84BB-F34E6975739A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4AC4AD5-7083-4D02-84BB-F34E6975739A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53E1241C-E2CC-4E1E-A332-AEC6636FEC7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53E1241C-E2CC-4E1E-A332-AEC6636FEC7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53E1241C-E2CC-4E1E-A332-AEC6636FEC7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53E1241C-E2CC-4E1E-A332-AEC6636FEC7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
