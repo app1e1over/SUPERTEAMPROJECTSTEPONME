@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[Pizza]
 (
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
-	[Title] NVARCHAR(20) NOT NULL,
-	[ImageSource] NVARCHAR(100) NOT NULL,
+	[Title] NVARCHAR(40) NOT NULL,
+	[ImageSource] NVARCHAR(500) NOT NULL,
 	[BasePrice] MONEY NOT NULL
 )
