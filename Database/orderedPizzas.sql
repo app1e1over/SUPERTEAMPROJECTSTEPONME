@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[OrderedPizzas]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY,
+	[PizzaId] INT NOT NULL FOREIGN KEY (PizzaId) REFERENCES Pizzas(Id),
+	[Price] MONEY NOT NULL,
+	[Quantity] INT NOT NULL DEFAULT 1,
+	[OrderId] INT NOT NULL FOREIGN KEY (OrderId) REFERENCES Orders(Id)
+)
