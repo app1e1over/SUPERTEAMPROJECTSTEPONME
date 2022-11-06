@@ -6,7 +6,46 @@
         xmlns:local="clr-namespace:Admin_Panel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+    <Grid Background="LightSkyBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70*"></ColumnDefinition>
+            <ColumnDefinition Width="30*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="0" Margin="10">
+        <StackPanel >
+            <StackPanel Orientation="Horizontal">
+                <Button Width="80"  Margin="10" Background="YellowGreen">Pizza</Button>
+                <Button Width="80" Margin="10" Background="Transparent">Ingidients</Button>
+                <Button Width="80" Margin="10" Background="Transparent">Orders</Button>
+            </StackPanel>
+                <DataGrid AutoGenerateColumns="False" Background="Transparent" HeadersVisibility="None">                
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Image" Width="100" IsReadOnly="True" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Title" Width="150"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Price" Width="150"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1"  Grid.Row="0" Grid.Column="1" Margin="10">
+            <StackPanel >
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">edit panel</TextBlock>
+                <Image HorizontalAlignment="Center" Height="100" Width="140">
+                    <Image.Source>
+                        <BitmapImage UriSource="C:\Users\UAuser\Source\Repos\SUPERTEAMPROJECTSTEPONME\Admin Panel\placeholder.jpg"></BitmapImage>
+                    </Image.Source>
+                </Image>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Margin="10" Background="Transparent">Title</TextBox>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Margin="10" Background="Transparent">Price</TextBox>
+                <Button Margin="10" Width="70" Height="30" Background="YellowGreen">Save</Button>
+                <Button Margin="10" Width="85" Height="27" Background="PaleVioletRed">Save as New</Button>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>
