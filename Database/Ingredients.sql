@@ -1,6 +1,7 @@
 ﻿CREATE TABLE [dbo].[Ingredients]
 (
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY,
+	[ImageSource] NVARCHAR(500) NOT NULL,
 	[Title] NVARCHAR(50) NOT NULL,
 	[Price] MONEY NOT NULL
 )

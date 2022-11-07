@@ -37,6 +37,8 @@ namespace Library.Models
 
             modelBuilder.Entity<Ingredient>(entity =>
             {
+                entity.Property(e => e.ImageSource).HasMaxLength(500);
+
                 entity.Property(e => e.Price).HasColumnType("money");
 
                 entity.Property(e => e.Title).HasMaxLength(50);
@@ -87,6 +89,8 @@ namespace Library.Models
 
             modelBuilder.Entity<Pizza>(entity =>
             {
+                entity.Property(e => e.ImageSource).HasMaxLength(500);
+
                 entity.Property(e => e.Price).HasColumnType("money");
 
                 entity.Property(e => e.Title).HasMaxLength(300);

@@ -11,6 +11,7 @@ namespace Library.Models
         }
 
         public int Id { get; set; }
+        public string ImageSource { get; set; } = null!;
         public string Title { get; set; } = null!;
         public decimal Price { get; set; }
 
