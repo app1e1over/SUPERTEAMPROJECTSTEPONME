@@ -7,6 +7,103 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70*"></ColumnDefinition>
+            <ColumnDefinition Width="30*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
+        <ListView 
+            HorizontalContentAlignment="Left"
+            
+            >
+            <WrapPanel Width="550">
+                <StackPanel Width="150" Background="LightGray" Margin="5">
+                    <Image Width="150" 
+                       Source="https://lh3.googleusercontent.com/fife/AAbDypCtMpT3foFe7XyZTu27DECAH5JXymx2IZ0hpHabpCl2tHmaxRzReKCgJPsv6iIt_A_UDm75ni9KXYYSCVNfM05Tzh2GVDRZMoXfp6bGqdYlm_08zXFUygW6lty7f7HFzvQ4_ANi-RI_z5CDoUd7dhcMqvKMyQ9sNxPjlnxzDAIj_-38NZCY17JYd8Ia754N0EuNDNtbPdpd1CY972UyXCMIjGpkdx2koakm6jkjX056WjAQYgLY_Z7qVxCmj973nclANYvE6iKt0822iZ59x358RnPnzi9Om-kZiA4cCRJquaMI4_BlPUD6NGv58T8Oxkv3qJ94z2meJxqcv_lLzCLBZ7dDM9K7ZEuf7ltfdzuPwxz7W7YQwnjQNY19JJikhQJfmB97qexV2LhJp9r--O6h91Gi-0JrCfZwENqAErqaNi55YzKQUYh04dC_Xx7Ft-TkIyBGm-iuoqeD_65O4kRpcjV_CAkJT_BOc9Cq0bnns7-W4K4dR23RhBOy0WED8ILVo31aXPg4dGD-vDkC90UStG3iA7onHLz0AsbGaxY8G1s3KxHoBnscBG1GEIPM37rMwqy6PhnCe1YWtQ4gxPGeADtRbsCpYw7A2yiTxy3aGi4iR1YwUFfZ7dVZDZ74ErJOJUIDJnLEAanpwjn5EtrRKi4RR-zO_jKTfTosAIFWuy9IVkZ4aiz9iyMsK_MuiCD4QNZHigUGMCfnlMXryMkFEiMhFfosscGNmv450WtRAf4VBi7GAnxC-qxm9JZISWU6SKBv8DIbvXr-okXcy1FNGmb3wRyZY11waWV5NhefnlerE3aly4h9FCB0O36MMdeBQ6797qTggxceFsz3aVSUT49ow-DcCo_kKxCNIJYJ7Aa3eEjw9gk-5BLXJqIpWwuVIETosWcezzVOBWFVhz00TNCYbYBnGNqajbv1X68H35iZhQgsa0sjybLJu_9CeYYYfEu5vZDEfw2WTzY9b5UdMSLVz71jA3jBA-VvqAyMMptSQwzpMnfKXwIqsajJFSSazsh4J5NroqmymPTr2MKU6nkZ1GDMVJkjFOpD91hmjs7fYWCz1hE7bn-Nb-HruFXZ-GH0UGzar_zqJkMdIInBCeHx-o2Cq5pUwmLlx6stZ497akmhR05f0LiMf1Lz84JU-8_n3EtTTHuegoPQYoPpKQ4eANS-1VVFfqhkqqqsxGl5mHeu5-TSZgbVwS0hkY_ThKd9MkHQbjX0xVGpKQwbhIIjyup30jD_D7wYtBerga1iLXJvKJ75rMXtmUtkxwDdkQgW44IWj8HTYABpFcpQ2DWTt-og67rLnaPzPT_MVT7ZCrHHZ0sDV9W12yuvh4aEgYMZs_b_59t5-B2hFNkrmmJxRE_8bVrR_ClfMfKMxytlD_7heAsxzU0qoadHKUG9qqM_6AuCKal4ZXN0xjz9z9wqMk0VS2busmETnIvuJvicgCn4CynZ7Z6WQpHHwwg7vJjgZHRIG6EamVw=w1860-h1007">
+
+                    </Image>
+                    <TextBlock HorizontalAlignment="Center" FontSize="15" FontWeight="Bold">
+                    Pizza title
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Center">
+                    150.00
+                    <TextBlock>
+                    UAH
+                        </TextBlock>
+                </TextBlock>
+                    <Button Margin="3" Padding="3">Add</Button>
+                </StackPanel>
+                <StackPanel Width="150" Background="LightGray" Margin="5">
+                    <Image Width="150" 
+                       Source="https://lh3.googleusercontent.com/fife/AAbDypCtMpT3foFe7XyZTu27DECAH5JXymx2IZ0hpHabpCl2tHmaxRzReKCgJPsv6iIt_A_UDm75ni9KXYYSCVNfM05Tzh2GVDRZMoXfp6bGqdYlm_08zXFUygW6lty7f7HFzvQ4_ANi-RI_z5CDoUd7dhcMqvKMyQ9sNxPjlnxzDAIj_-38NZCY17JYd8Ia754N0EuNDNtbPdpd1CY972UyXCMIjGpkdx2koakm6jkjX056WjAQYgLY_Z7qVxCmj973nclANYvE6iKt0822iZ59x358RnPnzi9Om-kZiA4cCRJquaMI4_BlPUD6NGv58T8Oxkv3qJ94z2meJxqcv_lLzCLBZ7dDM9K7ZEuf7ltfdzuPwxz7W7YQwnjQNY19JJikhQJfmB97qexV2LhJp9r--O6h91Gi-0JrCfZwENqAErqaNi55YzKQUYh04dC_Xx7Ft-TkIyBGm-iuoqeD_65O4kRpcjV_CAkJT_BOc9Cq0bnns7-W4K4dR23RhBOy0WED8ILVo31aXPg4dGD-vDkC90UStG3iA7onHLz0AsbGaxY8G1s3KxHoBnscBG1GEIPM37rMwqy6PhnCe1YWtQ4gxPGeADtRbsCpYw7A2yiTxy3aGi4iR1YwUFfZ7dVZDZ74ErJOJUIDJnLEAanpwjn5EtrRKi4RR-zO_jKTfTosAIFWuy9IVkZ4aiz9iyMsK_MuiCD4QNZHigUGMCfnlMXryMkFEiMhFfosscGNmv450WtRAf4VBi7GAnxC-qxm9JZISWU6SKBv8DIbvXr-okXcy1FNGmb3wRyZY11waWV5NhefnlerE3aly4h9FCB0O36MMdeBQ6797qTggxceFsz3aVSUT49ow-DcCo_kKxCNIJYJ7Aa3eEjw9gk-5BLXJqIpWwuVIETosWcezzVOBWFVhz00TNCYbYBnGNqajbv1X68H35iZhQgsa0sjybLJu_9CeYYYfEu5vZDEfw2WTzY9b5UdMSLVz71jA3jBA-VvqAyMMptSQwzpMnfKXwIqsajJFSSazsh4J5NroqmymPTr2MKU6nkZ1GDMVJkjFOpD91hmjs7fYWCz1hE7bn-Nb-HruFXZ-GH0UGzar_zqJkMdIInBCeHx-o2Cq5pUwmLlx6stZ497akmhR05f0LiMf1Lz84JU-8_n3EtTTHuegoPQYoPpKQ4eANS-1VVFfqhkqqqsxGl5mHeu5-TSZgbVwS0hkY_ThKd9MkHQbjX0xVGpKQwbhIIjyup30jD_D7wYtBerga1iLXJvKJ75rMXtmUtkxwDdkQgW44IWj8HTYABpFcpQ2DWTt-og67rLnaPzPT_MVT7ZCrHHZ0sDV9W12yuvh4aEgYMZs_b_59t5-B2hFNkrmmJxRE_8bVrR_ClfMfKMxytlD_7heAsxzU0qoadHKUG9qqM_6AuCKal4ZXN0xjz9z9wqMk0VS2busmETnIvuJvicgCn4CynZ7Z6WQpHHwwg7vJjgZHRIG6EamVw=w1860-h1007">
+
+                    </Image>
+                    <TextBlock HorizontalAlignment="Center" FontSize="15" FontWeight="Bold">
+                    Pizza title
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Center">
+                    150.00
+                    <TextBlock>
+                    UAH
+                        </TextBlock>
+                </TextBlock>
+                    <Button Margin="3" Padding="3">Add</Button>
+                </StackPanel>
+                <StackPanel Width="150" Background="LightGray" Margin="5">
+                    <Image Width="150" 
+                       Source="https://lh3.googleusercontent.com/fife/AAbDypCtMpT3foFe7XyZTu27DECAH5JXymx2IZ0hpHabpCl2tHmaxRzReKCgJPsv6iIt_A_UDm75ni9KXYYSCVNfM05Tzh2GVDRZMoXfp6bGqdYlm_08zXFUygW6lty7f7HFzvQ4_ANi-RI_z5CDoUd7dhcMqvKMyQ9sNxPjlnxzDAIj_-38NZCY17JYd8Ia754N0EuNDNtbPdpd1CY972UyXCMIjGpkdx2koakm6jkjX056WjAQYgLY_Z7qVxCmj973nclANYvE6iKt0822iZ59x358RnPnzi9Om-kZiA4cCRJquaMI4_BlPUD6NGv58T8Oxkv3qJ94z2meJxqcv_lLzCLBZ7dDM9K7ZEuf7ltfdzuPwxz7W7YQwnjQNY19JJikhQJfmB97qexV2LhJp9r--O6h91Gi-0JrCfZwENqAErqaNi55YzKQUYh04dC_Xx7Ft-TkIyBGm-iuoqeD_65O4kRpcjV_CAkJT_BOc9Cq0bnns7-W4K4dR23RhBOy0WED8ILVo31aXPg4dGD-vDkC90UStG3iA7onHLz0AsbGaxY8G1s3KxHoBnscBG1GEIPM37rMwqy6PhnCe1YWtQ4gxPGeADtRbsCpYw7A2yiTxy3aGi4iR1YwUFfZ7dVZDZ74ErJOJUIDJnLEAanpwjn5EtrRKi4RR-zO_jKTfTosAIFWuy9IVkZ4aiz9iyMsK_MuiCD4QNZHigUGMCfnlMXryMkFEiMhFfosscGNmv450WtRAf4VBi7GAnxC-qxm9JZISWU6SKBv8DIbvXr-okXcy1FNGmb3wRyZY11waWV5NhefnlerE3aly4h9FCB0O36MMdeBQ6797qTggxceFsz3aVSUT49ow-DcCo_kKxCNIJYJ7Aa3eEjw9gk-5BLXJqIpWwuVIETosWcezzVOBWFVhz00TNCYbYBnGNqajbv1X68H35iZhQgsa0sjybLJu_9CeYYYfEu5vZDEfw2WTzY9b5UdMSLVz71jA3jBA-VvqAyMMptSQwzpMnfKXwIqsajJFSSazsh4J5NroqmymPTr2MKU6nkZ1GDMVJkjFOpD91hmjs7fYWCz1hE7bn-Nb-HruFXZ-GH0UGzar_zqJkMdIInBCeHx-o2Cq5pUwmLlx6stZ497akmhR05f0LiMf1Lz84JU-8_n3EtTTHuegoPQYoPpKQ4eANS-1VVFfqhkqqqsxGl5mHeu5-TSZgbVwS0hkY_ThKd9MkHQbjX0xVGpKQwbhIIjyup30jD_D7wYtBerga1iLXJvKJ75rMXtmUtkxwDdkQgW44IWj8HTYABpFcpQ2DWTt-og67rLnaPzPT_MVT7ZCrHHZ0sDV9W12yuvh4aEgYMZs_b_59t5-B2hFNkrmmJxRE_8bVrR_ClfMfKMxytlD_7heAsxzU0qoadHKUG9qqM_6AuCKal4ZXN0xjz9z9wqMk0VS2busmETnIvuJvicgCn4CynZ7Z6WQpHHwwg7vJjgZHRIG6EamVw=w1860-h1007">
+
+                    </Image>
+                    <TextBlock HorizontalAlignment="Center" FontSize="15" FontWeight="Bold">
+                    Pizza title
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Center">
+                    150.00
+                    <TextBlock>
+                    UAH
+                        </TextBlock>
+                </TextBlock>
+                    <Button Margin="3" Padding="3">Add</Button>
+                </StackPanel>
+                <StackPanel Width="150" Background="LightGray" Margin="5">
+                    <Image Width="150" 
+                       Source="https://lh3.googleusercontent.com/fife/AAbDypCtMpT3foFe7XyZTu27DECAH5JXymx2IZ0hpHabpCl2tHmaxRzReKCgJPsv6iIt_A_UDm75ni9KXYYSCVNfM05Tzh2GVDRZMoXfp6bGqdYlm_08zXFUygW6lty7f7HFzvQ4_ANi-RI_z5CDoUd7dhcMqvKMyQ9sNxPjlnxzDAIj_-38NZCY17JYd8Ia754N0EuNDNtbPdpd1CY972UyXCMIjGpkdx2koakm6jkjX056WjAQYgLY_Z7qVxCmj973nclANYvE6iKt0822iZ59x358RnPnzi9Om-kZiA4cCRJquaMI4_BlPUD6NGv58T8Oxkv3qJ94z2meJxqcv_lLzCLBZ7dDM9K7ZEuf7ltfdzuPwxz7W7YQwnjQNY19JJikhQJfmB97qexV2LhJp9r--O6h91Gi-0JrCfZwENqAErqaNi55YzKQUYh04dC_Xx7Ft-TkIyBGm-iuoqeD_65O4kRpcjV_CAkJT_BOc9Cq0bnns7-W4K4dR23RhBOy0WED8ILVo31aXPg4dGD-vDkC90UStG3iA7onHLz0AsbGaxY8G1s3KxHoBnscBG1GEIPM37rMwqy6PhnCe1YWtQ4gxPGeADtRbsCpYw7A2yiTxy3aGi4iR1YwUFfZ7dVZDZ74ErJOJUIDJnLEAanpwjn5EtrRKi4RR-zO_jKTfTosAIFWuy9IVkZ4aiz9iyMsK_MuiCD4QNZHigUGMCfnlMXryMkFEiMhFfosscGNmv450WtRAf4VBi7GAnxC-qxm9JZISWU6SKBv8DIbvXr-okXcy1FNGmb3wRyZY11waWV5NhefnlerE3aly4h9FCB0O36MMdeBQ6797qTggxceFsz3aVSUT49ow-DcCo_kKxCNIJYJ7Aa3eEjw9gk-5BLXJqIpWwuVIETosWcezzVOBWFVhz00TNCYbYBnGNqajbv1X68H35iZhQgsa0sjybLJu_9CeYYYfEu5vZDEfw2WTzY9b5UdMSLVz71jA3jBA-VvqAyMMptSQwzpMnfKXwIqsajJFSSazsh4J5NroqmymPTr2MKU6nkZ1GDMVJkjFOpD91hmjs7fYWCz1hE7bn-Nb-HruFXZ-GH0UGzar_zqJkMdIInBCeHx-o2Cq5pUwmLlx6stZ497akmhR05f0LiMf1Lz84JU-8_n3EtTTHuegoPQYoPpKQ4eANS-1VVFfqhkqqqsxGl5mHeu5-TSZgbVwS0hkY_ThKd9MkHQbjX0xVGpKQwbhIIjyup30jD_D7wYtBerga1iLXJvKJ75rMXtmUtkxwDdkQgW44IWj8HTYABpFcpQ2DWTt-og67rLnaPzPT_MVT7ZCrHHZ0sDV9W12yuvh4aEgYMZs_b_59t5-B2hFNkrmmJxRE_8bVrR_ClfMfKMxytlD_7heAsxzU0qoadHKUG9qqM_6AuCKal4ZXN0xjz9z9wqMk0VS2busmETnIvuJvicgCn4CynZ7Z6WQpHHwwg7vJjgZHRIG6EamVw=w1860-h1007">
+
+                    </Image>
+                    <TextBlock HorizontalAlignment="Center" FontSize="15" FontWeight="Bold">
+                    Pizza title
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Center">
+                    150.00
+                    <TextBlock>
+                    UAH
+                        </TextBlock>
+                </TextBlock>
+                    <Button Margin="3" Padding="3">Add</Button>
+                </StackPanel>
+                <StackPanel Width="150" Background="LightGray" Margin="5">
+                    <Image Width="150" 
+                       Source="https://lh3.googleusercontent.com/fife/AAbDypCtMpT3foFe7XyZTu27DECAH5JXymx2IZ0hpHabpCl2tHmaxRzReKCgJPsv6iIt_A_UDm75ni9KXYYSCVNfM05Tzh2GVDRZMoXfp6bGqdYlm_08zXFUygW6lty7f7HFzvQ4_ANi-RI_z5CDoUd7dhcMqvKMyQ9sNxPjlnxzDAIj_-38NZCY17JYd8Ia754N0EuNDNtbPdpd1CY972UyXCMIjGpkdx2koakm6jkjX056WjAQYgLY_Z7qVxCmj973nclANYvE6iKt0822iZ59x358RnPnzi9Om-kZiA4cCRJquaMI4_BlPUD6NGv58T8Oxkv3qJ94z2meJxqcv_lLzCLBZ7dDM9K7ZEuf7ltfdzuPwxz7W7YQwnjQNY19JJikhQJfmB97qexV2LhJp9r--O6h91Gi-0JrCfZwENqAErqaNi55YzKQUYh04dC_Xx7Ft-TkIyBGm-iuoqeD_65O4kRpcjV_CAkJT_BOc9Cq0bnns7-W4K4dR23RhBOy0WED8ILVo31aXPg4dGD-vDkC90UStG3iA7onHLz0AsbGaxY8G1s3KxHoBnscBG1GEIPM37rMwqy6PhnCe1YWtQ4gxPGeADtRbsCpYw7A2yiTxy3aGi4iR1YwUFfZ7dVZDZ74ErJOJUIDJnLEAanpwjn5EtrRKi4RR-zO_jKTfTosAIFWuy9IVkZ4aiz9iyMsK_MuiCD4QNZHigUGMCfnlMXryMkFEiMhFfosscGNmv450WtRAf4VBi7GAnxC-qxm9JZISWU6SKBv8DIbvXr-okXcy1FNGmb3wRyZY11waWV5NhefnlerE3aly4h9FCB0O36MMdeBQ6797qTggxceFsz3aVSUT49ow-DcCo_kKxCNIJYJ7Aa3eEjw9gk-5BLXJqIpWwuVIETosWcezzVOBWFVhz00TNCYbYBnGNqajbv1X68H35iZhQgsa0sjybLJu_9CeYYYfEu5vZDEfw2WTzY9b5UdMSLVz71jA3jBA-VvqAyMMptSQwzpMnfKXwIqsajJFSSazsh4J5NroqmymPTr2MKU6nkZ1GDMVJkjFOpD91hmjs7fYWCz1hE7bn-Nb-HruFXZ-GH0UGzar_zqJkMdIInBCeHx-o2Cq5pUwmLlx6stZ497akmhR05f0LiMf1Lz84JU-8_n3EtTTHuegoPQYoPpKQ4eANS-1VVFfqhkqqqsxGl5mHeu5-TSZgbVwS0hkY_ThKd9MkHQbjX0xVGpKQwbhIIjyup30jD_D7wYtBerga1iLXJvKJ75rMXtmUtkxwDdkQgW44IWj8HTYABpFcpQ2DWTt-og67rLnaPzPT_MVT7ZCrHHZ0sDV9W12yuvh4aEgYMZs_b_59t5-B2hFNkrmmJxRE_8bVrR_ClfMfKMxytlD_7heAsxzU0qoadHKUG9qqM_6AuCKal4ZXN0xjz9z9wqMk0VS2busmETnIvuJvicgCn4CynZ7Z6WQpHHwwg7vJjgZHRIG6EamVw=w1860-h1007">
+
+                    </Image>
+                    <TextBlock HorizontalAlignment="Center" FontSize="15" FontWeight="Bold">
+                    Pizza title
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Center">
+                    150.00
+                    <TextBlock>
+                    UAH
+                        </TextBlock>
+                </TextBlock>
+                    <Button Margin="3" Padding="3">Add</Button>
+                </StackPanel>
+            </WrapPanel>
+            
+            
+        </ListView>
+        
     </Grid>
 </Window>
