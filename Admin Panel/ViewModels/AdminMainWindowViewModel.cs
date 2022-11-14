@@ -12,6 +12,26 @@ namespace Admin_Panel.ViewModels
     public class AdminMainWindowViewModel : NotifyPropertyChangedBase
     {
         public ObservableCollection<PizzaViewModel> Pizzas { get; set; }
+        public ObservableCollection<IngredientViewModel> Ingredients { get; set; }
+
+        public AdminMainWindowViewModel()
+        {
+            Pizzas = new ObservableCollection<PizzaViewModel>();
+            _db = new PizzaContext();
+            _db.Pizzas
+                .Select(p => new PizzaViewModel { pizza = p })
+                .ToList()
+                .ForEach(Pizzas.Add);
+
+            Ingredients = new ObservableCollection<IngredientViewModel>();
+            _db.Ingredients
+                .Select(i => new IngredientViewModel { ingredient = i })
+                .ToList()
+                .ForEach(Ingredients.Add);
+
+        }
+
+        private PizzaContext _db;
 
         private PizzaViewModel _selectedPizza;
         public PizzaViewModel SelectedPizza
@@ -24,24 +44,22 @@ namespace Admin_Panel.ViewModels
             }
         }
 
-        public AdminMainWindowViewModel()
+        private IngredientViewModel _selectedIngredient;
+        public IngredientViewModel SelectedIngredient
         {
-            Pizzas = new ObservableCollection<PizzaViewModel>();
-            _db = new PizzaContext();
-            _db.Pizzas
-                .Select(p => new PizzaViewModel { pizza = p })
-                .ToList()
-                .ForEach(Pizzas.Add);
-
+            get => _selectedIngredient;
+            set {
+                _selectedIngredient = value;
+                OnPropertyChanged(nameof(SelectedIngredient));
+            }
         }
-        private PizzaContext _db;
+
         public ICommand SaveCommand => new RelayCommand(x =>
         {
             _db.SaveChanges();
         },
             x => true);
-
-        public ICommand NewCommand => new RelayCommand(x =>
+        public ICommand NewPizzaCommand => new RelayCommand(x =>
         {
             var model = new Pizza();
             _db.Pizzas.Add(model);
@@ -50,6 +68,20 @@ namespace Admin_Panel.ViewModels
             Pizzas.Add(viewModel);
         },
     x => true);
+        public ICommand NewIngredientCommand => new RelayCommand(x =>
+        {
+            var model = new Ingredient();
+            _db.Ingredients.Add(model);
+
+            var viewModel = new IngredientViewModel() { ingredient = model };
+            Ingredients.Add(viewModel);
+        },
+x => true);
+
+
+
+
+
 
     }
 }
