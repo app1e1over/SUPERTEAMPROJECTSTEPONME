@@ -15,7 +15,8 @@
             <ColumnDefinition Width="30*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <ListView HorizontalContentAlignment="Left" ItemsSource="{Binding Path=Pizzas}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <Border BorderBrush="Black" BorderThickness="1" Margin="5" Grid.Row="0" Grid.Column="0" >
+            <ListView  HorizontalContentAlignment="Left" ItemsSource="{Binding Path=Pizzas}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate >
                     <WrapPanel Orientation="Horizontal"/>
@@ -32,6 +33,13 @@
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
+            </ListView>
+        </Border>
+
+        <Border BorderBrush="Black" BorderThickness="1" Margin="5" Grid.Row="0" Grid.Column="1">
+            <StackPanel >
+                <Label HorizontalAlignment="Center" FontSize="15">Cart</Label>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>
