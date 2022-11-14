@@ -5,28 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Admin_Panel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="540" Width="800">
     <Grid Background="LightSkyBlue">
             <TabControl>
                 <TabItem Header="Pizzas">
-                <Grid>
+                <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="70*"></ColumnDefinition>
                     <ColumnDefinition Width="30*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                     <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="0" Margin="10">
-                        <DataGrid>
-
+                        <DataGrid ItemsSource="{Binding Path = Pizzas}" SelectedItem="{Binding Path=SelectedPizza}" AutoGenerateColumns="False" IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}"></DataGridTextColumn>
+                                <DataGridTemplateColumn Header="Image">
+                                    <DataGridTemplateColumn.CellTemplate >
+                                        <DataTemplate>
+                                            <Image Source="{Binding Path=ImageSource}" Width="100" Height="80" Stretch="Uniform"></Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Header="Title" Binding="{Binding Path=Title}"></DataGridTextColumn>
+                              <!--  <DataGridTextColumn Header="ImageSource" Binding="{Binding Path=ImageSource}"></DataGridTextColumn> -->
+                                <DataGridTextColumn Header="Size" Binding="{Binding Path=Size}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Price" Binding="{Binding Path=Price}"></DataGridTextColumn>
+                            </DataGrid.Columns>
                         </DataGrid>
                     </Border>
-                    <Border BorderBrush="Black" BorderThickness="1"  Grid.Row="0" Grid.Column="1" Margin="10">
-                        <StackPanel >
-                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Pizza edit</TextBlock>
-
-                            <TextBox VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Margin="10" Background="Transparent">Title</TextBox>
-                            <TextBox VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Margin="10" Background="Transparent">Price</TextBox>
-                            <Button Margin="10" Width="70" Height="30" Background="YellowGreen">Save</Button>
-                            <Button Margin="10" Width="85" Height="27" Background="PaleVioletRed">Save as New</Button>
+                    <Border BorderBrush="Black" BorderThickness="1"  Grid.Row="0" Grid.Column="1" Margin="5">
+                        <StackPanel Margin="-1,-1,0,0" >
+                            <Image  Source="{Binding Path=SelectedPizza.ImageSource}" Margin="10"></Image>
+                            <Label  Margin="0">Title</Label>
+                            <TextBox  FontSize="15" Margin="5" Background="Transparent" Text="{Binding Path=SelectedPizza.Title}"></TextBox>
+                            <Label  Margin="0">Price</Label>
+                            <TextBox  FontSize="15" Margin="5" Background="Transparent" Text="{Binding Path=SelectedPizza.Price}"></TextBox>
+                            <Label  Margin="0">Size</Label>
+                            <TextBox  FontSize="15" Margin="5" Background="Transparent" Text="{Binding Path=SelectedPizza.Size}"></TextBox>
+                            <Label  Margin="0">ImageSource</Label>
+                            <TextBox  FontSize="15" Margin="5" Background="Transparent" Text="{Binding Path=SelectedPizza.ImageSource}"></TextBox>
+                            
+                            <Button  Width="70" Height="30" Background="YellowGreen" Margin="5" Command="{Binding Path=SaveCommand}">Save</Button>
+                            <Button  Width="85" Height="27" Background="PaleVioletRed" Margin="5" Command="{Binding Path=NewCommand}">New</Button>
                         </StackPanel>
                     </Border>
                 </Grid>
@@ -38,7 +57,7 @@
                         <ColumnDefinition Width="30*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="0" Margin="10">
-                        <DataGrid>
+                        <DataGrid AutoGenerateColumns="False">
 
                         </DataGrid>
                     </Border>

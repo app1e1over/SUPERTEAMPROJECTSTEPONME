@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Admin_Panel.ViewModels;
 
 namespace Admin_Panel
 {
@@ -23,6 +24,7 @@ namespace Admin_Panel
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new AdminMainWindowViewModel();
         }
     }
 }
