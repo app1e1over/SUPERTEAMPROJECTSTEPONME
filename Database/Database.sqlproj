@@ -65,4 +65,7 @@
     <Build Include="Orders.sql" />
     <Build Include="pizzas.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment1.sql" />
+  </ItemGroup>
 </Project>

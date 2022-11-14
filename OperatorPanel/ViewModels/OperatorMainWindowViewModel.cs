@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Library.Models;
 
-namespace Admin_Panel.ViewModels
+namespace OperatorPanel.ViewModels
 {
-    public class AdminMainWindowViewModel : NotifyPropertyChangedBase
+    public class OperatorMainWindowViewModel : NotifyPropertyChangedBase
     {
         public ObservableCollection<PizzaViewModel> Pizzas { get; set; }
         public ObservableCollection<IngredientViewModel> Ingredients { get; set; }
 
-        public AdminMainWindowViewModel()
+        public OperatorMainWindowViewModel()
         {
             Pizzas = new ObservableCollection<PizzaViewModel>();
             _db = new PizzaContext();
@@ -47,40 +43,11 @@ namespace Admin_Panel.ViewModels
         public IngredientViewModel SelectedIngredient
         {
             get => _selectedIngredient;
-            set {
+            set
+            {
                 _selectedIngredient = value;
                 OnPropertyChanged(nameof(SelectedIngredient));
             }
         }
-
-        public ICommand SaveCommand => new RelayCommand(x =>
-        {
-            _db.SaveChanges();
-        },
-            x => true);
-        public ICommand NewPizzaCommand => new RelayCommand(x =>
-        {
-            var model = new Pizza();
-            _db.Pizzas.Add(model);
-
-            var viewModel = new PizzaViewModel() { pizza = model };
-            Pizzas.Add(viewModel);
-        },
-    x => true);
-        public ICommand NewIngredientCommand => new RelayCommand(x =>
-        {
-            var model = new Ingredient();
-            _db.Ingredients.Add(model);
-
-            var viewModel = new IngredientViewModel() { ingredient = model };
-            Ingredients.Add(viewModel);
-        },
-x => true);
-
-
-
-
-
-
     }
 }

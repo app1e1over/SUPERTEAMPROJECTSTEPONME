@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using OperatorPanel.ViewModels;
 
 namespace OperatorPanel
 {
@@ -23,6 +24,7 @@ namespace OperatorPanel
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new OperatorMainWindowViewModel();
         }
     }
 }
