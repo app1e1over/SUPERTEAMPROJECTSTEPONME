@@ -5,41 +5,103 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OperatorPanel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="1200">
     <Grid>
         <Grid.RowDefinitions>
             
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="70*"></ColumnDefinition>
-            <ColumnDefinition Width="30*"></ColumnDefinition>
+            <ColumnDefinition Width="50*"></ColumnDefinition>
+            <ColumnDefinition Width="50*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <Border BorderBrush="Black" BorderThickness="1" Margin="5" Grid.Row="0" Grid.Column="0" >
-            <ListView  HorizontalContentAlignment="Left" ItemsSource="{Binding Path=Pizzas}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-            <ListBox.ItemsPanel>
-                <ItemsPanelTemplate >
-                    <WrapPanel Orientation="Horizontal"/>
-                </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Width="150" Background="LightGray" Margin="5" >
-                        <Image Width="150" Source="{Binding Path=ImageSource}"></Image>
-                        <TextBlock HorizontalAlignment="Center" FontSize="15" FontWeight="Bold" Text="{Binding Path=Title}"></TextBlock>
-                        <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Price}"> <TextBlock> UAH</TextBlock></TextBlock>
-                        <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Size}"> <TextBlock>cm</TextBlock></TextBlock>
-                        <Button Margin="3" Padding="3">Add</Button>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+            <ListView  HorizontalContentAlignment="Left" ItemsSource="{Binding Path=Pizzas}" SelectedItem="{Binding Path=SelectedPizza}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate >
+                        <WrapPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Width="150" Background="LightGray" Margin="5" >
+                            <Image Width="150" Source="{Binding Path=ImageSource}"></Image>
+                            <TextBlock HorizontalAlignment="Center" FontSize="15" FontWeight="Bold" Text="{Binding Path=Title}"></TextBlock>
+                            <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Price}"> <TextBlock> UAH</TextBlock></TextBlock>
+                            <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Size}"> <TextBlock>cm</TextBlock></TextBlock>
+                            <Button Margin="3" Padding="3" Command="{Binding Path=DataContext.AddPizzaToCartCommand, RelativeSource={RelativeSource AncestorType=local:MainWindow}}" CommandParameter="{Binding}">Add</Button>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
         </Border>
 
         <Border BorderBrush="Black" BorderThickness="1" Margin="5" Grid.Row="0" Grid.Column="1">
-            <StackPanel >
-                <Label HorizontalAlignment="Center" FontSize="15">Cart</Label>
-            </StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90*"></RowDefinition>
+                    <RowDefinition Height="10*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0">
+                    <Label HorizontalAlignment="Center" FontSize="15">Cart</Label>
+                    <ListView ItemsSource="{Binding Path=OrderedPizzas}" SelectedItem="{Binding Path=SelectedOrderedPizza}" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions >
+                                        <ColumnDefinition Width="50*"></ColumnDefinition>
+                                        <ColumnDefinition Width="50*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0" Width="150" Background="LightGray" Margin="5" >
+                                        <Image Width="150" Source="{Binding Path=ImageSource}"></Image>
+                                        <TextBlock HorizontalAlignment="Center" FontSize="15" FontWeight="Bold" Text="{Binding Path=Title}"></TextBlock>
+                                        <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Price}"> <TextBlock> UAH</TextBlock></TextBlock>
+                                        <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Size}"> <TextBlock>cm</TextBlock></TextBlock>
+                                        <StackPanel.ContextMenu>
+                                            <ContextMenu>
+                                                <MenuItem Header="Add ingredient" Command="{Binding Path=AddIngredientCommand}" CommandParameter="{Binding}"></MenuItem>
+                                                <MenuItem Header="Delete Pizza" Command="{Binding Path=DeletePizza}" CommandParameter="{Binding}"></MenuItem>
+                                            </ContextMenu>
+                                        </StackPanel.ContextMenu>
+                                    </StackPanel>
+                                    <ListView Grid.Column="1" ItemsSource="{Binding Path=OrderedIngredients}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                        <ListBox.ItemsPanel>
+                                            <ItemsPanelTemplate >
+                                                <WrapPanel Orientation="Horizontal"/>
+                                            </ItemsPanelTemplate>
+                                        </ListBox.ItemsPanel>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Width="100" Background="LightGray" Margin="5" >
+                                                    <Image Width="100" Source="{Binding Path=ImageSource}"></Image>
+                                                    <TextBlock HorizontalAlignment="Center" FontSize="15" FontWeight="Bold" Text="{Binding Path=Title}"></TextBlock>
+                                                    <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Price}"> <TextBlock> UAH</TextBlock></TextBlock>
+                                                    <StackPanel.ContextMenu>
+                                                        <ContextMenu>
+                                                            <MenuItem Header="Delete Ingredient" Command="{Binding Path=DeleteIngredient}" CommandParameter="{Binding}"></MenuItem>
+                                                        </ContextMenu>
+                                                    </StackPanel.ContextMenu>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Background="LawnGreen">
+                        <TextBlock Text="{Binding Path=OrderPrice}" d:Text="150.00"></TextBlock>
+                        <TextBlock HorizontalAlignment="Left"> grn</TextBlock>
+                    </TextBlock>
+                    <Button Grid.Column="1" FontSize="20" Background="Aqua" Command="{Binding Path=MakeOrder}">Make order</Button>
+                </Grid>
+            </Grid>
         </Border>
     </Grid>
 </Window>

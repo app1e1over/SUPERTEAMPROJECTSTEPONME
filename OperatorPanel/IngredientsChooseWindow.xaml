@@ -1,0 +1,29 @@
+﻿<Window x:Class="OperatorPanel.IngredientsChooseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OperatorPanel"
+        mc:Ignorable="d"
+        Title="IngredientsChooseWindow" Height="450" Width="800">
+    <Grid>
+        <ListView ItemsSource="{Binding Path=Ingredients }" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate >
+                    <WrapPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Button Command="{Binding Path=DataContext.AddIngredientToPizzaCommand, RelativeSource={RelativeSource AncestorType=local:IngredientsChooseWindow}}" CommandParameter="{Binding}" >
+                        <StackPanel Width="100" Background="LightGray" Margin="5" >
+                            <Image Width="100" Source="{Binding Path=ImageSource}"></Image>
+                            <TextBlock HorizontalAlignment="Center" FontSize="15" FontWeight="Bold" Text="{Binding Path=Title}"></TextBlock>
+                            <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Price}"> <TextBlock> UAH</TextBlock></TextBlock>
+                        </StackPanel>
+                    </Button>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>
